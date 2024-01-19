@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices.Marshalling;
 
+
+// As exceeding requirements i add code to take the prompts from a csv file instead of creating a list by the program itself.
+
 class Program
 {
     static void Main(string[] args)
@@ -13,7 +16,7 @@ class Program
         Console.WriteLine("Welcome to Journal");
         int user;
         Journal main = new Journal();
-        //main._entries = 
+        
         do 
         {
             Console.WriteLine("Choose one option: ");

@@ -13,7 +13,7 @@ public class PromptGenerator
     public string ChooseRandom(string file)
     {
         string line;
-
+        //reads the file to store the prompts
         StreamReader sr = new StreamReader(file);
         line = sr.ReadLine();
         while (line != null)
