@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public class Breath : Activity
 {
    
@@ -7,6 +9,9 @@ public class Breath : Activity
    }
    public void Run()
    {
-
+      DisplayStartingMessage();
+      int time = Convert.ToInt32(Console.ReadLine());
+      activityDuration(time);
+      endMessage();
    }
 }

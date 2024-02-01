@@ -1,3 +1,5 @@
+using System.Runtime.ExceptionServices;
+
 public class Activity{
     
     protected string _name;
@@ -16,22 +18,43 @@ public class Activity{
     public void DisplayStartingMessage()
     {   
         //Display the title and description
+        Console.WriteLine($"Welcome to the {_name}\n \n{_description}");
+        Console.WriteLine("\nHow long, in seconds, would you like for your section? ");
+
+        /*string infoReflect = "Welcome to the Reflecting Activity.\n \nThis activity will help you reflect on times in your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.\n \nHow long, in seconds, would you like for your section?";
+
+        string infoListing = "Welcome to the Listing Activity.\n \nThis activity will help you reflect on the good things in your life by having you list as many things as you can in centain area.\n \nHow long, in seconds, would you like for your section?";
+        */
     }
 
     public string endMessage()
     {   
         //Take care of the end messages
-        return "";
+        return $"Congratulations, you finish {_duration} seconds of {_name}";
     }
 
     public void activityDuration(int seconds)
     {
-        //A method for the duration of the activity
+        //A method for the seconds of the activity
+        _duration = seconds;
         
-    }
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(seconds);
+        DateTime currentTime;
 
+        do 
+        {
+            Console.WriteLine("a");
+            Thread.Sleep(1000);
+            currentTime = DateTime.Now;
+
+        }while(currentTime < endTime);
+        Console.WriteLine("Finish");
+
+    }
     public void showSpinner(int seconds)
     {
         //Pause and spinning animation
     }
+
 }

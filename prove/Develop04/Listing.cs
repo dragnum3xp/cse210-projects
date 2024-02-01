@@ -19,9 +19,9 @@ public class Listing : Activity
     return "";
    }
 
-   public List<string> GetListFromUser()
+   /*public List<string> GetListFromUser()
    {
     //Hold a List of entries
     return;
-   }
+   }*/
 }
