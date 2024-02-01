@@ -1,5 +1,5 @@
 using System.Runtime.ExceptionServices;
-
+using System.Threading;
 public class Activity{
     
     protected string _name;
@@ -27,31 +27,24 @@ public class Activity{
         */
     }
 
-    public string endMessage()
+    public void endMessage()
     {   
         //Take care of the end messages
-        return $"Congratulations, you finish {_duration} seconds of {_name}";
+
+        Console.WriteLine($"\nCongratulations, you finish {_duration} seconds of {_name}");
     }
 
-    public void activityDuration(int seconds)
+    public void CountdownTime(int seconds)
     {
-        //A method for the seconds of the activity
-        _duration = seconds;
-        
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(seconds);
-        DateTime currentTime;
-
-        do 
+        //A method for countdown
+        for (int i = seconds; i > 0; i--)
         {
-            Console.WriteLine("a");
+            Console.Write(".");
             Thread.Sleep(1000);
-            currentTime = DateTime.Now;
-
-        }while(currentTime < endTime);
-        Console.WriteLine("Finish");
-
+            Console.Write("\b \b");
+        }
     }
+
     public void showSpinner(int seconds)
     {
         //Pause and spinning animation
