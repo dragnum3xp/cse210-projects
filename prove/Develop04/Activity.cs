@@ -50,11 +50,11 @@ public class Activity{
         animation.Add("/");
         animation.Add("-");
         animation.Add("\\");
-        /*animation.Add("|");
-        animation.Add("");
-        animation.Add("");
-        animation.Add("");
-        animation.Add("");*/
+        animation.Add("|");
+        animation.Add("/");
+        animation.Add("-");
+        animation.Add("\\");
+        animation.Add("|");
         int index = 0;
         DateTime endTime = DateTime.Now.AddSeconds(seconds);
         while (DateTime.Now < endTime)

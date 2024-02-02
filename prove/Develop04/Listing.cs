@@ -15,7 +15,8 @@ public class Listing : Activity
         int endTimeSeconds = Convert.ToInt32(Console.ReadLine());
         _duration = endTimeSeconds;
         DateTime endTime = DateTime.Now.AddSeconds(endTimeSeconds + 10);   
-      
+        
+        Console.Clear();
         Console.WriteLine("Get ready...");
         showSpinner(4);
 
@@ -35,7 +36,7 @@ public class Listing : Activity
         Console.WriteLine();
         endMessage();
         showSpinner(3);
-        Console.WriteLine();
+        Console.Clear();
 
 
    }

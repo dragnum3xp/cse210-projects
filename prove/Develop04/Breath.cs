@@ -16,6 +16,7 @@ public class Breath : Activity
       _duration = endTimeSeconds;
       DateTime endTime = DateTime.Now.AddSeconds(endTimeSeconds + 4);   
       
+      Console.Clear();
       Console.WriteLine("Get ready...");
       showSpinner(4);
       do
@@ -26,12 +27,13 @@ public class Breath : Activity
          CountdownTime(4);
          
       }while (DateTime.Now < endTime);
+      Console.Clear();
       Console.WriteLine("Well done!!");
       showSpinner(5);
       Console.WriteLine();
       endMessage();
       showSpinner(3);
-      Console.WriteLine();
+      Console.Clear();
       
    }
 }

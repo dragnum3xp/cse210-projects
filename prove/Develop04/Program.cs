@@ -1,6 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.Xml.Serialization;
+/* 
+I did an 4th option so the user can receive a message according with the number of exercises he did
+*/
 
 class Program
 {
@@ -15,12 +18,14 @@ class Program
                 
             if (user == 1)
             {   
+                Console.Clear();
                 count = count + 1; 
                 Breath breath = new Breath("Breathing activity", "This activity will help you relax by walking through breathing in and out slowly. Clear your mind and focus on your breathing.");
                 breath.Run();
 
             }else if (user == 2)
             {   
+                Console.Clear();
                 count = count + 1; 
                 Reflect reflect = new Reflect("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
                 reflect.Run();
@@ -28,11 +33,14 @@ class Program
             }else if (user == 3)
             {   
                 count = count + 1; 
+                Console.Clear();
                 Listing Listing = new Listing("Listing Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in centain area.");
                 Listing.Run();
 
             }else if (user == 4)
             {   
+                
+                Console.Clear();
                 if (count == 1){
                     Console.WriteLine($"\nGood job you did {count} exercise today\n");}
                 else if (count == 2){
@@ -42,7 +50,9 @@ class Program
                 else {
                     Console.WriteLine("\nYou need to take care of yourself... You didn't made any Exercises Yet\n");}
                 
-
+                Thread.Sleep(3000);
+                Console.Clear();
+                
             }
                 
 
