@@ -16,17 +16,14 @@ public class Reflect : Activity
         Console.WriteLine("Enter duration in seconds: ");
         int endTimeSeconds = Convert.ToInt32(Console.ReadLine());
         _duration = endTimeSeconds;
-        DateTime endTime = DateTime.Now.AddSeconds(endTimeSeconds);   
+        DateTime endTime = DateTime.Now.AddSeconds(endTimeSeconds + 10);   
       
-        Console.WriteLine("Get ready");
-        for (int i = 4; i > 0; i--)
-        {
-            Console.Write(".");
-            Thread.Sleep(1000);
+        Console.WriteLine("Get ready...");
+        showSpinner(4);
 
-        }
         Console.WriteLine("Consider the following prompt: \n");
         DisplayPrompt();
+        Thread.Sleep(3000);
         Console.WriteLine("\nWhen you have something in mind, press enter to continue");
         string userInput = Console.ReadLine();
         Console.WriteLine("\nNow ponder on each of the following questions as they related to this experience.");
@@ -35,10 +32,14 @@ public class Reflect : Activity
         
         while (DateTime.Now < endTime){
             DisplayQuestions();
-            CountdownTime(10);
+            showSpinner(10);
             Console.WriteLine();
         }
+        Console.WriteLine("Well done!!");
+        showSpinner(5);
+        Console.WriteLine();
         endMessage();
+        showSpinner(3);
         Console.WriteLine();
 
 

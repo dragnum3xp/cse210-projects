@@ -1,5 +1,5 @@
 using System.Runtime.ExceptionServices;
-using System.Threading;
+
 public class Activity{
     
     protected string _name;
@@ -21,10 +21,7 @@ public class Activity{
         Console.WriteLine($"Welcome to the {_name}\n \n{_description}");
         Console.WriteLine("\nHow long, in seconds, would you like for your section? ");
 
-        /*string infoReflect = "Welcome to the Reflecting Activity.\n \nThis activity will help you reflect on times in your life when you have shown strenght and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.\n \nHow long, in seconds, would you like for your section?";
 
-        string infoListing = "Welcome to the Listing Activity.\n \nThis activity will help you reflect on the good things in your life by having you list as many things as you can in centain area.\n \nHow long, in seconds, would you like for your section?";
-        */
     }
 
     public void endMessage()
@@ -39,7 +36,7 @@ public class Activity{
         //A method for countdown
         for (int i = seconds; i > 0; i--)
         {
-            Console.Write(".");
+            Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
@@ -48,6 +45,29 @@ public class Activity{
     public void showSpinner(int seconds)
     {
         //Pause and spinning animation
+        List<string> animation = new List<string>();
+        animation.Add("|");
+        animation.Add("/");
+        animation.Add("-");
+        animation.Add("\\");
+        /*animation.Add("|");
+        animation.Add("");
+        animation.Add("");
+        animation.Add("");
+        animation.Add("");*/
+        int index = 0;
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+        while (DateTime.Now < endTime)
+        {   
+            Console.Write(animation[index]);
+            if (index == 3){index = 0;}
+            index = index + 1;
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+        }
+
+
+
     }
 
 }
